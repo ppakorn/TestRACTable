@@ -9,5 +9,15 @@
 import UIKit
 
 class ViewModel: NSObject {
+    
+    let service = Service()
+    var data: [Model]?
+    
+    func getData() {
+        service.getList().startWithNext{
+            response in
+            self.data = response
+        }
+    }
 
 }
