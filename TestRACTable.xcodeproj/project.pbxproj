@@ -17,6 +17,8 @@
 		2B8CC5D31C081A5A00639E2C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5D21C081A5A00639E2C /* Model.swift */; };
 		2B8CC5D51C081A7100639E2C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5D41C081A7100639E2C /* ViewModel.swift */; };
 		2B8CC5D71C081B6C00639E2C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5D61C081B6C00639E2C /* Service.swift */; };
+		2B8CC5DF1C08375D00639E2C /* RAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5DD1C08375D00639E2C /* RAC.swift */; };
+		2B8CC5E01C08375D00639E2C /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5DE1C08375D00639E2C /* RACObserve.swift */; };
 		875607F703BF385A2CE4A8BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB79D88425077713295BAF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +55,10 @@
 		2B8CC5C41C08194B00639E2C /* TestRACTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRACTableUITests.swift; sourceTree = "<group>"; };
 		2B8CC5C61C08194B00639E2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B8CC5D21C081A5A00639E2C /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		2B8CC5D41C081A7100639E2C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = ../ViewModel.swift; sourceTree = "<group>"; };
+		2B8CC5D41C081A7100639E2C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2B8CC5D61C081B6C00639E2C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2B8CC5DD1C08375D00639E2C /* RAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAC.swift; sourceTree = "<group>"; };
+		2B8CC5DE1C08375D00639E2C /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
 		65DB79D88425077713295BAF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE19F7C14182FF0C0EA8F73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,11 +102,11 @@
 			isa = PBXGroup;
 			children = (
 				2B8CC5A31C08194A00639E2C /* TestRACTable */,
+				6DC94CB5C19822D35701B602 /* Frameworks */,
+				03D70F4CC90E5A1AF096807C /* Pods */,
+				2B8CC5A21C08194A00639E2C /* Products */,
 				2B8CC5B81C08194A00639E2C /* TestRACTableTests */,
 				2B8CC5C31C08194B00639E2C /* TestRACTableUITests */,
-				2B8CC5A21C08194A00639E2C /* Products */,
-				03D70F4CC90E5A1AF096807C /* Pods */,
-				6DC94CB5C19822D35701B602 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,15 +123,16 @@
 		2B8CC5A31C08194A00639E2C /* TestRACTable */ = {
 			isa = PBXGroup;
 			children = (
+				2B8CC5DC1C0835A000639E2C /* Util */,
 				2B8CC5A41C08194A00639E2C /* AppDelegate.swift */,
+				2B8CC5AB1C08194A00639E2C /* Assets.xcassets */,
+				2B8CC5B01C08194A00639E2C /* Info.plist */,
+				2B8CC5AD1C08194A00639E2C /* LaunchScreen.storyboard */,
+				2B8CC5A81C08194A00639E2C /* Main.storyboard */,
+				2B8CC5D21C081A5A00639E2C /* Model.swift */,
+				2B8CC5D61C081B6C00639E2C /* Service.swift */,
 				2B8CC5A61C08194A00639E2C /* ViewController.swift */,
 				2B8CC5D41C081A7100639E2C /* ViewModel.swift */,
-				2B8CC5D61C081B6C00639E2C /* Service.swift */,
-				2B8CC5D21C081A5A00639E2C /* Model.swift */,
-				2B8CC5A81C08194A00639E2C /* Main.storyboard */,
-				2B8CC5AB1C08194A00639E2C /* Assets.xcassets */,
-				2B8CC5AD1C08194A00639E2C /* LaunchScreen.storyboard */,
-				2B8CC5B01C08194A00639E2C /* Info.plist */,
 			);
 			path = TestRACTable;
 			sourceTree = "<group>";
@@ -135,8 +140,8 @@
 		2B8CC5B81C08194A00639E2C /* TestRACTableTests */ = {
 			isa = PBXGroup;
 			children = (
-				2B8CC5B91C08194A00639E2C /* TestRACTableTests.swift */,
 				2B8CC5BB1C08194A00639E2C /* Info.plist */,
+				2B8CC5B91C08194A00639E2C /* TestRACTableTests.swift */,
 			);
 			path = TestRACTableTests;
 			sourceTree = "<group>";
@@ -144,10 +149,19 @@
 		2B8CC5C31C08194B00639E2C /* TestRACTableUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2B8CC5C41C08194B00639E2C /* TestRACTableUITests.swift */,
 				2B8CC5C61C08194B00639E2C /* Info.plist */,
+				2B8CC5C41C08194B00639E2C /* TestRACTableUITests.swift */,
 			);
 			path = TestRACTableUITests;
+			sourceTree = "<group>";
+		};
+		2B8CC5DC1C0835A000639E2C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2B8CC5DD1C08375D00639E2C /* RAC.swift */,
+				2B8CC5DE1C08375D00639E2C /* RACObserve.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		6DC94CB5C19822D35701B602 /* Frameworks */ = {
@@ -340,10 +354,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8CC5DF1C08375D00639E2C /* RAC.swift in Sources */,
 				2B8CC5D31C081A5A00639E2C /* Model.swift in Sources */,
 				2B8CC5A71C08194A00639E2C /* ViewController.swift in Sources */,
 				2B8CC5D71C081B6C00639E2C /* Service.swift in Sources */,
 				2B8CC5D51C081A7100639E2C /* ViewModel.swift in Sources */,
+				2B8CC5E01C08375D00639E2C /* RACObserve.swift in Sources */,
 				2B8CC5A51C08194A00639E2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +402,7 @@
 				2B8CC5A91C08194A00639E2C /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		2B8CC5AD1C08194A00639E2C /* LaunchScreen.storyboard */ = {
@@ -394,6 +411,7 @@
 				2B8CC5AE1C08194A00639E2C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
