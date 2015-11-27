@@ -21,6 +21,7 @@
 		2B8CC5E01C08375D00639E2C /* RACObserve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5DE1C08375D00639E2C /* RACObserve.swift */; };
 		2B8CC5E21C08443100639E2C /* NormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5E11C08443100639E2C /* NormalTableViewCell.swift */; };
 		2B8CC5E41C0844EA00639E2C /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5E31C0844EA00639E2C /* ItemViewModel.swift */; };
+		2B8CC5E71C08521200639E2C /* TableBindingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8CC5E61C08521200639E2C /* TableBindingHelper.swift */; };
 		875607F703BF385A2CE4A8BE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DB79D88425077713295BAF /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		2B8CC5DE1C08375D00639E2C /* RACObserve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACObserve.swift; sourceTree = "<group>"; };
 		2B8CC5E11C08443100639E2C /* NormalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTableViewCell.swift; sourceTree = "<group>"; };
 		2B8CC5E31C0844EA00639E2C /* ItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		2B8CC5E61C08521200639E2C /* TableBindingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableBindingHelper.swift; sourceTree = "<group>"; };
 		65DB79D88425077713295BAF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE19F7C14182FF0C0EA8F73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 				2B8CC5E11C08443100639E2C /* NormalTableViewCell.swift */,
 				2B8CC5D41C081A7100639E2C /* ViewModel.swift */,
 				2B8CC5E31C0844EA00639E2C /* ItemViewModel.swift */,
+				2B8CC5E61C08521200639E2C /* TableBindingHelper.swift */,
 			);
 			path = TestRACTable;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				2B8CC5E41C0844EA00639E2C /* ItemViewModel.swift in Sources */,
 				2B8CC5D51C081A7100639E2C /* ViewModel.swift in Sources */,
 				2B8CC5E01C08375D00639E2C /* RACObserve.swift in Sources */,
+				2B8CC5E71C08521200639E2C /* TableBindingHelper.swift in Sources */,
 				2B8CC5A51C08194A00639E2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

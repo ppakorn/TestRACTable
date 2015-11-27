@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import ReactiveCocoa
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     
-    let viewModel = ViewModel()
+    private let viewModel = ViewModel()
+    private var bindingHelper: TableBindingHelper?
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
@@ -28,20 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func bindViewModel() {
-        RACObserve(viewModel, "itemViewModels").subscribeNext{ _ in
-            self.tableView.reloadData()
-        }
-    }
-
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.itemViewModels?.count ?? 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! NormalTableViewCell
-        cell.bindViewModel(viewModel.itemViewModels![indexPath.row])
-        return cell
+        self.bindingHelper = TableBindingHelper(tableView: self.tableView, viewModel: self.viewModel)
     }
 
 }

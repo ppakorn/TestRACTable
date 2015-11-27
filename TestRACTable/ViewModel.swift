@@ -19,10 +19,15 @@ class ViewModel: NSObject {
         service.getList().startWithNext{
             response in
             self.data = response
-            self.itemViewModels = []
+//            self.itemViewModels = []
+//            for d in self.data! {
+//                self.itemViewModels?.append(ItemViewModel(d.name))
+//            }
+            var tempItemViewModels: [ItemViewModel] = []
             for d in self.data! {
-                self.itemViewModels?.append(ItemViewModel(d.name))
+                tempItemViewModels.append(ItemViewModel(d.name))
             }
+            self.itemViewModels = tempItemViewModels
         }
     }
 
