@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         bindViewModel()
         viewModel.getData()
-        print(viewModel.data)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,19 +27,19 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func bindViewModel() {
-        RACObserve(viewModel, "data").subscribeNext{ _ in
+        RACObserve(viewModel, "name").subscribeNext{ _ in
             self.tableView.reloadData()
         }
     }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.data?.count ?? 0
+        return viewModel.name?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-        if let name = viewModel.data?[indexPath.row].name {
+        if let name = viewModel.name?[indexPath.row] {
             cell?.textLabel?.text = name
         }
         return cell!
