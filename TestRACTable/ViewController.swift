@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -27,22 +28,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func bindViewModel() {
-        RACObserve(viewModel, "name").subscribeNext{ _ in
+        RACObserve(viewModel, "itemViewModels").subscribeNext{ _ in
             self.tableView.reloadData()
         }
     }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.name?.count ?? 0
+        return viewModel.itemViewModels?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-        if let name = viewModel.name?[indexPath.row] {
-            cell?.textLabel?.text = name
-        }
-        return cell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! NormalTableViewCell
+        cell.bindViewModel(viewModel.itemViewModels![indexPath.row])
+        return cell
     }
 
 }

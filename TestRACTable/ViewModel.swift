@@ -13,15 +13,15 @@ class ViewModel: NSObject {
     let service = Service()
     private var data: [Model]?
     
-    dynamic var name: [String]?
+    dynamic var itemViewModels: [ItemViewModel]?
     
     func getData() {
         service.getList().startWithNext{
             response in
             self.data = response
-            self.name = []
+            self.itemViewModels = []
             for d in self.data! {
-                self.name?.append(d.name)
+                self.itemViewModels?.append(ItemViewModel(d.name))
             }
         }
     }
