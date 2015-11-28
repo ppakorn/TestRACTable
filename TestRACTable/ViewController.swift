@@ -40,5 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell!
     }
 
+    @IBAction func reloadData() {
+        service.getList {
+            array in
+            self.data = array
+        }
+    }
+    
+    @IBAction func reloadTable() {
+        tableView.reloadData()
+    }
+    
 }
 

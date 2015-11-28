@@ -30,8 +30,8 @@ class Service: NSObject {
     
     func buildRandomArrayOfModel() -> Array<Model> {
         var array: Array<Model> = []
-        for i in 1...30 {
-            array.append(Model("Name \(i)"))
+        for _ in 1...30 {
+            array.append(Model("Name \(arc4random_uniform(100))"))
         }
         
         return array
