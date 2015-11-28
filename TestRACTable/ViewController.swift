@@ -18,8 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         
         bindViewModel()
-        viewModel.getData()
-        print(viewModel.data)
+        viewModel.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +43,14 @@ class ViewController: UIViewController, UITableViewDataSource {
             cell?.textLabel?.text = name
         }
         return cell!
+    }
+    
+    @IBAction func reloadData() {
+        viewModel.loadData()
+    }
+    
+    @IBAction func reloadTable() {
+        tableView.reloadData()
     }
 
 }

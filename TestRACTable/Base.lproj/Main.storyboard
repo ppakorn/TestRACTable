@@ -18,35 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xfu-ex-dAP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f1v-4B-iWb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uaY-4b-9D9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="6NP-qL-cfK">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uaY-4b-9D9" id="UK3-kV-8ap">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6NP-qL-cfK" id="kmo-hf-WJ2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uvb-RY-288"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="blU-hz-RzC"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gui-2r-tYE"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Gd8-FB-HOj"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy8-Su-30x">
+                                <rect key="frame" x="460" y="285" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="4Uk-bB-OJT"/>
+                                    <constraint firstAttribute="height" constant="30" id="xhW-bo-Fh3"/>
+                                </constraints>
+                                <state key="normal" title="ReloadData"/>
+                                <connections>
+                                    <action selector="reloadData" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvW-NZ-1BV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LX-s2-cdU">
+                                <rect key="frame" x="460" y="335" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hkZ-jT-Gr3"/>
+                                    <constraint firstAttribute="height" constant="30" id="rES-wD-P61"/>
+                                </constraints>
+                                <state key="normal" title="ReloadTable"/>
+                                <connections>
+                                    <action selector="reloadTable" destination="BYZ-38-t0r" eventType="touchUpInside" id="IDr-QW-5Xu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xfu-ex-dAP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="4Tj-iA-oo0"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xfu-ex-dAP" secondAttribute="bottom" id="PBC-t6-oCi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xfu-ex-dAP" secondAttribute="trailing" constant="-20" id="bme-iV-ZhO"/>
-                            <constraint firstItem="xfu-ex-dAP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="yiS-gC-Ten"/>
+                            <constraint firstItem="2LX-s2-cdU" firstAttribute="top" secondItem="Vy8-Su-30x" secondAttribute="bottom" constant="20" id="0Cv-s4-sU9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f1v-4B-iWb" secondAttribute="bottom" id="TZI-bl-mb8"/>
+                            <constraint firstItem="Vy8-Su-30x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VPZ-Wi-Mrf"/>
+                            <constraint firstItem="f1v-4B-iWb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YW2-lR-eZI"/>
+                            <constraint firstItem="f1v-4B-iWb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="cVB-BO-VME"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2LX-s2-cdU" secondAttribute="trailing" constant="20" id="p0f-sV-wmg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f1v-4B-iWb" secondAttribute="trailing" constant="-20" id="rBy-Jw-IEw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vy8-Su-30x" secondAttribute="trailing" constant="20" id="v4c-eh-59e"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="xfu-ex-dAP" id="AEp-V2-zgQ"/>
+                        <outlet property="tableView" destination="f1v-4B-iWb" id="YGh-Xm-0S0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

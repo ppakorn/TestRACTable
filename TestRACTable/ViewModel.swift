@@ -13,11 +13,10 @@ class ViewModel: NSObject {
     let service = Service()
     dynamic var data: [Model]?
     
-    func getData() {
+    func loadData() {
         service.getList().startWithNext{
             response in
             self.data = response
-//            print(self.data)
         }
     }
 
