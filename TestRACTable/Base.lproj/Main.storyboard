@@ -26,22 +26,43 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uaY-4b-9D9" id="UK3-kV-8ap">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AON-Sg-i0Y">
+                                <rect key="frame" x="460" y="285" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Gnf-3O-x7h"/>
+                                </constraints>
+                                <state key="normal" title="ReloadData"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtT-u0-gSG" userLabel="ReloadTable">
+                                <rect key="frame" x="460" y="335" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PGi-jf-BKz"/>
+                                    <constraint firstAttribute="width" constant="100" id="tEL-aA-DsG"/>
+                                </constraints>
+                                <state key="normal" title="ReloadTable"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xfu-ex-dAP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="4Tj-iA-oo0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AON-Sg-i0Y" secondAttribute="trailing" constant="20" id="AKY-SV-wfl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xfu-ex-dAP" secondAttribute="bottom" id="PBC-t6-oCi"/>
+                            <constraint firstItem="CtT-u0-gSG" firstAttribute="top" secondItem="AON-Sg-i0Y" secondAttribute="bottom" constant="20" id="Rd1-PE-pln"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xfu-ex-dAP" secondAttribute="trailing" constant="-20" id="bme-iV-ZhO"/>
+                            <constraint firstItem="AON-Sg-i0Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e8u-lt-0Tc"/>
+                            <constraint firstItem="CtT-u0-gSG" firstAttribute="trailing" secondItem="AON-Sg-i0Y" secondAttribute="trailing" id="haj-JV-YSK"/>
                             <constraint firstItem="xfu-ex-dAP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="yiS-gC-Ten"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="reloadDataButton" destination="AON-Sg-i0Y" id="q5b-yh-cJW"/>
+                        <outlet property="reloadTableButton" destination="CtT-u0-gSG" id="AJC-fV-sNW"/>
                         <outlet property="tableView" destination="xfu-ex-dAP" id="AEp-V2-zgQ"/>
                     </connections>
                 </viewController>
