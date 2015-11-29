@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ViewModel: NSObject {
     
     let service = Service()
     private var data: [Model]?
     
-    dynamic var itemViewModels: [ItemViewModel]?
+//    dynamic var itemViewModels: [ItemViewModel]?
+    
+    var itemViewModels = MutableProperty<[ItemViewModel]>([])
     
     func getData() {
         service.getList().startWithNext{
@@ -27,7 +30,7 @@ class ViewModel: NSObject {
             for d in self.data! {
                 tempItemViewModels.append(ItemViewModel(d.name))
             }
-            self.itemViewModels = tempItemViewModels
+            self.itemViewModels.value = tempItemViewModels
         }
     }
 

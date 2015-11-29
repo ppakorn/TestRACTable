@@ -20,21 +20,27 @@ class TableBindingHelper: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         super.init()
         
-        RACObserve(viewModel, "itemViewModels").subscribeNext{ _ in
+//        RACObserve(viewModel, "itemViewModels").subscribeNext{ _ in
+//            tableView.reloadData()
+//        }
+        
+        viewModel.itemViewModels.producer.startWithNext {
+            _ in
             tableView.reloadData()
         }
+    
         
         tableView.dataSource = self
         tableView.delegate = self
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.itemViewModels?.count ?? 0
+        return viewModel.itemViewModels.value.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! NormalTableViewCell
-        cell.bindViewModel(viewModel.itemViewModels![indexPath.row])
+        cell.bindViewModel(viewModel.itemViewModels.value[indexPath.row])
         return cell
     }
 }

@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class NormalTableViewCell: UITableViewCell {
     
     func bindViewModel(itemViewModel: ItemViewModel) {
-        RACObserve(itemViewModel, "name").subscribeNext {
-            (name: AnyObject!) -> () in
-            self.textLabel?.text = name as? String
+//        RACObserve(itemViewModel, "name").subscribeNext {
+//            (name: AnyObject!) -> () in
+//            self.textLabel?.text = name as? String
+//        }
+        
+        itemViewModel.name.producer.startWithNext {
+            nameString in
+            self.textLabel?.text = nameString
         }
     }
 

@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ItemViewModel: NSObject {
     
-    dynamic var name: String?
+//    dynamic var name: String?
+    var name = MutableProperty<String?>(nil)
     
     init(_ name: String) {
-        self.name = name
+        self.name.value = name
     }
     
 }
