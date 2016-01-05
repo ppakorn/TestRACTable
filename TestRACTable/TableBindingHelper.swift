@@ -20,10 +20,6 @@ class TableBindingHelper: NSObject, UITableViewDataSource, UITableViewDelegate {
         
         super.init()
         
-//        RACObserve(viewModel, "itemViewModels").subscribeNext{ _ in
-//            tableView.reloadData()
-//        }
-        
         viewModel.itemViewModels.producer.startWithNext {
             _ in
             tableView.reloadData()

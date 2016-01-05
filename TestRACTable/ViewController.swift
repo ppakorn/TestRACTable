@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class ViewController: UIViewController {
     
@@ -35,15 +36,38 @@ class ViewController: UIViewController {
     }
     
     func bindButton() {
-        reloadDataButton.rac_signalForControlEvents(.TouchUpInside).subscribeNext {
-            _ in
+        
+//        doesn't work. Still not clear about Action and CocoaAction
+//        and what the best way to define action in VC or VM is
+        
+        let reloadDataAction = Action<Void, Void, NoError> {
             self.viewModel.getData()
+            return SignalProducer.empty
         }
+        let reloadDataCocoaAction = CocoaAction(reloadDataAction, input: ())
+//            {
+//            _ in
+//            self.viewModel.getData()
+//            print("aaa")
+//        }
+        
+        reloadDataButton.addTarget(reloadDataCocoaAction, action: CocoaAction.selector, forControlEvents: .TouchUpInside)
+        
+        
+        // Old way using RACSignal
+//        reloadDataButton.rac_signalForControlEvents(.TouchUpInside).subscribeNext {
+//            _ in
+//            self.viewModel.getData()
+//        }
         
         reloadTableButton.rac_signalForControlEvents(.TouchUpInside).subscribeNext {
             _ in
             self.tableView.reloadData()
         }
+    }
+    
+    @IBAction func reloadData() {
+        self.viewModel.getData()
     }
 
 }

@@ -11,7 +11,7 @@ import ReactiveCocoa
 
 class Service: NSObject {
 
-    func getList() -> SignalProducer<[Model]?, NSError> {
+    func getList() -> SignalProducer<[Model], NoError> {
         return SignalProducer {
             observer, disposable in
             let delay = UInt64(2.0) * NSEC_PER_SEC
@@ -24,8 +24,8 @@ class Service: NSObject {
         }
     }
     
-    func buildRandomArrayOfModel() -> Array<Model> {
-        var array: Array<Model> = []
+    func buildRandomArrayOfModel() -> [Model] {
+        var array: [Model] = []
         for _ in 1...30 {
             array.append(Model("Name \(arc4random_uniform(100))"))
         }
